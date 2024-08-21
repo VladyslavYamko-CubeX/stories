@@ -8,6 +8,10 @@ const hocusPlugin = require('tailwindcss-hocus');
 
 // COLOR TOKENS
 const primitiveColors = {
+	'custom-black-1': '#02021C',
+	'custom-white-1': '#FBFCFF',
+	'custom-white-2': '#F6F8FF',
+	'custom-white-3': '#E8EFFF',
 	'primary-1': '#f5f9fe',
 	'primary-2': '#d3e7f8',
 	'primary-3': '#b2d4f2',
@@ -262,6 +266,10 @@ const primitiveColors = {
 
 const aliasColorTokens = {
 	// Brand Primary Colors
+	brandCustomBlack1: primitiveColors['custom-black-1'],
+	brandCustomWhite1: primitiveColors['custom-white-1'],
+	brandCustomWhite2: primitiveColors['custom-white-2'],
+	brandCustomWhite3: primitiveColors['custom-white-3'],
 	brandPrimary1: primitiveColors['primary-1'],
 	brandPrimary2: primitiveColors['primary-2'],
 	brandPrimary3: primitiveColors['primary-3'],
@@ -611,10 +619,9 @@ const aliasTextTokens = {
 	labelLg20: {
 		fontSize: '20px',
 		fontFamily: primitiveFontFamily['montserrat'],
-		fontWeight: 600,
+		fontWeight: 700,
 		letterSpacing: '0em',
-		lineHeight: '110.00000238418579%',
-		textTransform: 'uppercase',
+		lineHeight: '120%',
 	},
 	labelMd16: {
 		fontSize: '16px',

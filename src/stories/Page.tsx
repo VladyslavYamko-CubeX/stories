@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { Header } from './Header';
-import './page.css';
+import './Page.css';
 import { Card } from './Card';
 
 type User = {
@@ -11,21 +11,36 @@ type User = {
 const descriptionProp =
 	'Interfaces should not contain fjdsakl fdjsa lfuidfdsjfk dsajfdsajf';
 
+const cardsData = [
+	{
+		tabIdx: 1,
+		chip: 'Power BI',
+		title: 'Power BI 101',
+		desc: descriptionProp,
+		img: 'img1',
+		ext: 'jpg',
+	},
+	{
+		tabIdx: 1,
+		chip: 'Power Platform',
+		title: 'Using Copilot with Word',
+		desc: descriptionProp,
+		img: 'img2',
+		ext: 'jpg',
+	},
+	{
+		tabIdx: 1,
+		chip: 'Excel',
+		title: 'Excel Favorite Tricks',
+		desc: descriptionProp,
+		img: 'img3',
+		ext: 'jpg',
+	},
+];
+
 export const Page: React.FC = () => {
 	const [user, setUser] = useState<User>();
 	const [darkMode, setDarkMode] = useState<boolean>(false);
-	const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-	useEffect(() => {
-		const checkScreenSize = () => {
-			setIsSmallScreen(window.innerWidth < 1248);
-		};
-
-		window.addEventListener('resize', checkScreenSize);
-		checkScreenSize();
-
-		return () => window.removeEventListener('resize', checkScreenSize);
-	}, []);
 
 	return (
 		<article className={darkMode ? 'dark' : ''}>
@@ -39,12 +54,12 @@ export const Page: React.FC = () => {
 			/>
 
 			<section className='flex justify-center'>
-				<div className='xs:px-6 xs:pt-12 flex flex-col xs:gap-2'>
+				<div className='storybook-wrapper'>
 					<div>
-						<h6 className='font-bold text-neutralColored10 sm:text-xl md:text-base xl:text-xl'>
+						<h6 className='storybook-page-header'>
 							Latest Quick Hits
 						</h6>
-						<p className='word-break text-neutralColored9 sm:text-xl md:hidden xl:inline'>
+						<p className='word-break storybook-lead'>
 							Previously Recorded Micro-
 							<br className='sm:hidden' />
 							learning
@@ -52,36 +67,10 @@ export const Page: React.FC = () => {
 							Sessions
 						</p>
 					</div>
-					<div className='flex flex-col xs:gap-6 w-fit md:flex-row xl:gap-12'>
-						<Card
-							tabIdx={1}
-							locked={!user}
-							chip='Power BI'
-							title='Power BI 101'
-							desc={descriptionProp}
-							img='img1'
-							ext='jpg'
-						/>
-						<Card
-							tabIdx={1}
-							locked={!user}
-							chip='Power Platform'
-							title='Using Copilot with Word'
-							desc={descriptionProp}
-							img='img2'
-							ext='jpg'
-						/>
-						{!isSmallScreen && (
-							<Card
-								tabIdx={1}
-								locked={!user}
-								chip='Excel'
-								title='Excel Favorite Tricks'
-								desc={descriptionProp}
-								img='img3'
-								ext='jpg'
-							/>
-						)}
+					<div className='storybook-cards-wrapper'>
+						{cardsData.map((cardProps, index) => (
+							<Card key={index} {...cardProps} locked={!user} />
+						))}
 					</div>
 					<div
 						className='flex gap-2'
@@ -89,7 +78,7 @@ export const Page: React.FC = () => {
 						aria-label='Link to view more micro-learning'
 					>
 						<img src='/src/assets/tv.svg' alt='tv' />
-						<p className='font-bold text-brandPrimary9'>
+						<p className='strong-default text-brandPrimary9'>
 							View More Quick Hits
 						</p>
 					</div>

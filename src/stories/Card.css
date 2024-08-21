@@ -1,0 +1,19 @@
+.storybook-title {
+	@apply strong-default text-brandPrimary9 group-hover:text-brandPrimary11 group-hover:underline group-active:text-brandPrimary13 group-focus-visible:text-brandPrimary11 group-focus-visible:underline dark:text-brandPrimary4 dark:group-hover:text-brandPrimary6 dark:group-focus:text-brandPrimary6 dark:group-active:text-brandPrimary8;
+}
+
+.storybook-title-container {
+	@apply p-4 h-16 border border-brandSecondary3 flex items-center relative bg-brandCustomWhite1 group-hover:bg-brandCustomWhite2 group-active:bg-brandCustomWhite3 group-focus:bg-brandCustomWhite2 dark:bg-brandCustomBlack1 dark:border-brandSecondary10 dark:group-hover:bg-brandSecondary14 dark:group-focus:bg-brandSecondary14 dark:group-active:bg-brandSecondary13;
+}
+
+.storybook-chip {
+	@apply strong-default absolute right-4 top-[-24px] border border-neutral4 text-neutralColored10 rounded-3xl bg-neutral2 px-[14px] py-1 flex gap-2 h-[30px] items-start shadow-secondary-01 dark:bg-neutral13 dark:text-neutralColored3 dark:border-neutral10;
+}
+
+.storybook-card {
+	@apply max-w-[368px] h-[360px]  border border-neutral4 rounded-2xl shadow-blue-00 overflow-hidden hover:shadow-blue-05 hover:cursor-pointer active:shadow-none  active:border-brandPrimary9 focus-visible:border-2 focus-visible:border-brandPrimary11 focus-visible:outline-none focus-visible:shadow-blue-05 dark:border-neutral10 dark:focus-visible:border-brandPrimary6;
+}
+
+.storybook-desc-container {
+	@apply p-4 h-full bg-white group-hover:bg-neutralColored1 group-active:bg-brandPrimary2 group-focus:bg-neutralColored1 dark:bg-neutral15 dark:group-hover:bg-neutral17 dark:group-focus:bg-neutral17 dark:group-active:bg-brandPrimary11;
+}
